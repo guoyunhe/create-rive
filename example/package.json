@@ -1,0 +1,52 @@
+{
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "style": "dist/index.css",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "rive start",
+    "build": "rive build",
+    "test": "rive test",
+    "lint": "rive lint",
+    "format": "rive format"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/jest": "^18.0.0",
+    "jest": "^28.0.0",
+    "rive": "latest",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "ts-jest": "^28.0.0",
+    "typescript": "^4.0.0"
+  },
+  "jest": {
+    "preset": "rive"
+  },
+  "eslintConfig": {
+    "extends": [
+      "rive"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-rive"
+    ],
+    "ignoreFiles": [
+      "node_modules",
+      "coverage",
+      "dist"
+    ]
+  }
+}
