@@ -1,3 +1,4 @@
+import { basename, join } from 'path';
 import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
 import { initGitIgnore } from './initGitIgnore.js';
@@ -15,11 +16,11 @@ export interface InitOptions {
    *
    * @default "react"
    */
-  template?: 'react' | 'react-icons' | 'node' | 'cli';
+  template: 'react' | 'react-icons' | 'node' | 'cli';
   /**
    * By default, rive generates both CJS and ESM. If esmOnly is enabled, CJS will NOT be generated.
    */
-  esmOnly?: boolean;
+  esmOnly: boolean;
   /**
    * Package mangager to use.
    *
@@ -28,12 +29,18 @@ export interface InitOptions {
   packageManager: 'npm' | 'yarn' | 'pnpm';
 }
 
-export async function init({ template, esmOnly, packageManager }: InitOptions) {
+export async function init(
+  project: string | null,
+  { template, esmOnly, packageManager }: InitOptions,
+) {
+  const root = project ? join(process.cwd(), project) : process.cwd();
+  const name = project ? basename(project) : basename(process.cwd());
+
   removeConflictFiles();
 
   initEditorConfig();
   initGitIgnore();
-  initPackageJson();
+  await initPackageJson(root, name, template, esmOnly);
   initTSConfig();
   initVSCodeExtensions();
   initVSCodeSettings();
@@ -42,5 +49,5 @@ export async function init({ template, esmOnly, packageManager }: InitOptions) {
   initGitHubCI();
 
   await runCommand(`${packageManager} update`);
-  await runCommand(`${packageManager} run lint`);
+  await runCommand(`${packageManager} run lint:fix`);
 }
