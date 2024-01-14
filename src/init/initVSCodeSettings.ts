@@ -1,5 +1,5 @@
+import merge from 'deepmerge';
 import fse from 'fs-extra';
-import { merge } from 'lodash-es';
 import { join } from 'path';
 
 const settingsConfig = {

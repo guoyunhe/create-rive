@@ -15,10 +15,18 @@ i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
 
 const program = new Command('create-rive');
 
-program.option('--template').action(init);
+program
+  .option('-t, --template <name>', i18n.__('template_option_desc'), 'react')
+  .option('-e, --esm-only', i18n.__('esm_only_option_desc'))
+  .option(
+    '-p, --package-manager <name>',
+    i18n.__('package_manager_option_desc'),
+    'npm',
+  )
+  .action(init);
 
-program.helpOption('-h, --help', i18n.__('help_cmd_desc'));
+program.helpOption('-h, --help', i18n.__('help_option_desc'));
 
-program.version(riveVersion, '-v, --version', i18n.__('version_cmd_desc'));
+program.version(riveVersion, '-v, --version', i18n.__('version_option_desc'));
 
 program.parse();

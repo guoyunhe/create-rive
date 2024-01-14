@@ -1,5 +1,5 @@
+import merge from 'deepmerge';
 import fse from 'fs-extra';
-import { merge, unset } from 'lodash-es';
 
 const { readJsonSync, writeJsonSync } = fse;
 
@@ -72,7 +72,7 @@ export function initPackageJson() {
 
   // Remove conflict devDependencies
   devDepsToRemove.forEach((dep) => {
-    unset(packageJson, 'devDependencies.' + dep);
+    delete packageJson.devDependencies[dep];
   });
 
   writeJsonSync(filePath, packageJson, { spaces: 2 });

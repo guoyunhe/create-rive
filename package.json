@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Effortless React Library Development Experience",
   "type": "module",
-  "bin": "lib/create-rive.js",
+  "bin": "dist/create-rive.js",
   "files": [
     "lib",
     "CHANGELOG.md",
@@ -11,9 +11,11 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rm -rf lib && tsc",
-    "watch": "rm -rf lib && tsc --watch",
-    "test": "cd example && ts-node-esm ../src/create-rive.ts"
+    "build": "rive build",
+    "build:watch": "rive watch",
+    "lint": "rive lint",
+    "lint:fix": "rive lint --fix",
+    "test": "cd example && tsx ../src/create-rive.ts"
   },
   "repository": {
     "type": "git",
@@ -34,22 +36,20 @@
   },
   "homepage": "https://github.com/guoyunhe/create-rive#readme",
   "devDependencies": {
-    "@types/fs-extra": "^9.0.13",
-    "@types/i18n": "^0.13.4",
-    "@types/lodash-es": "^4.17.6",
-    "@types/node": "^16.11.56",
-    "ts-node": "^10.9.1"
+    "@types/fs-extra": "^11.0.4",
+    "@types/i18n": "^0.13.10",
+    "@types/node": "^20.11.0",
+    "rive": "2.0.0-beta.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "chalk": "^5.0.1",
-    "commander": "^9.4.0",
-    "fast-glob": "^3.2.11",
-    "fs-extra": "^10.1.0",
-    "i18n": "^0.15.0",
-    "i18next": "^21.9.1",
-    "i18next-fs-backend": "^1.1.5",
-    "lodash-es": "^4.17.21",
-    "simple-git": "^3.13.0",
-    "typescript": "^4.8.2"
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "deepmerge": "^4.3.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "i18n": "^0.15.1",
+    "simple-git": "^3.22.0"
   }
 }
