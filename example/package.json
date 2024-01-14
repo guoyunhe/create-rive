@@ -1,22 +1,15 @@
 {
   "name": "example",
   "version": "0.0.1",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
   "style": "dist/index.css",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
     "CHANGELOG.md",
-    "dist",
-    "CHANGELOG.md",
     "LICENSE",
-    "README.md",
-    "dist",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md",
     "dist",
     "CHANGELOG.md",
     "LICENSE",
@@ -27,8 +20,9 @@
     "build": "rive build",
     "test": "rive test",
     "lint": "rive lint",
-    "format": "rive format",
-    "lint:fix": "rive lint --fix"
+    "lint:fix": "rive lint --fix",
+    "build:watch": "rive build --watch",
+    "test:watch": "rive test --watch"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
@@ -46,23 +40,7 @@
   "eslintConfig": {
     "extends": "rive"
   },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist",
-    "node_modules",
-    "coverage",
-    "dist"
-  ],
   "stylelint": {
-    "extends": "stylelint-config-rive",
-    "ignoreFiles": [
-      "node_modules",
-      "coverage",
-      "dist",
-      "node_modules",
-      "coverage",
-      "dist"
-    ]
+    "extends": "stylelint-config-rive"
   }
 }
