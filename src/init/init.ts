@@ -5,7 +5,7 @@ import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
 import { initGitIgnore } from './initGitIgnore.js';
 import { initPackageJson } from './initPackageJson.js';
-import { initTSConfig } from './initTSConfig.js';
+import { initTsconfig } from './initTsconfig.js';
 import { initVSCodeExtensions } from './initVSCodeExtensions.js';
 import { initVSCodeSettings } from './initVSCodeSettings.js';
 import { removeConflictFiles } from './removeConflictFiles.js';
@@ -49,7 +49,7 @@ export async function init(
   initEditorConfig();
   initGitIgnore();
   await initPackageJson(root, name, _template, esmOnly);
-  initTSConfig();
+  initTsconfig(_template);
   initVSCodeExtensions();
   initVSCodeSettings();
   initGitHubCI();

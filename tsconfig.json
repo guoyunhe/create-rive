@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "lib": [
+      "esnext",
       "es2021"
     ],
-    "module": "es2022",
-    "target": "es2021",
+    "module": "esnext",
+    "target": "esnext",
     "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
@@ -22,7 +23,14 @@
     "checkJs": true,
     "moduleResolution": "node",
     "outDir": "lib",
-    "rootDir": "src"
+    "rootDir": "src",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": [
+      "vitest/globals"
+    ]
   },
   "include": [
     "src/**/*.ts"

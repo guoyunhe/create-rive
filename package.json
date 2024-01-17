@@ -1,7 +1,7 @@
 {
   "name": "create-rive",
   "version": "1.0.0",
-  "description": "Effortless React Library Development Experience",
+  "description": "Effortless React/Node.js library development experience",
   "keywords": [
     "react",
     "typescript",
@@ -30,7 +30,7 @@
     "CHANGELOG.md",
     "LICENSE",
     "README.md",
-    "lib"
+    "locales"
   ],
   "scripts": {
     "build": "rive build",
@@ -46,9 +46,6 @@
   "prettier": "prettier-config-rive",
   "eslintConfig": {
     "extends": "eslint-config-rive"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-rive"
   },
   "dependencies": {
     "chalk": "^5.3.0",
@@ -79,5 +76,8 @@
     "doc": {
       "basename": "/create-rive/"
     }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-rive"
   }
 }
