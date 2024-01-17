@@ -17,7 +17,7 @@ const program = new Command('create-rive');
 
 program
   .argument('[project]', i18n.__('project_argument_desc'))
-  .option('-t, --template <name>', i18n.__('template_option_desc'), 'react')
+  .option('-t, --template <name>', i18n.__('template_option_desc'))
   .option('-e, --esm-only', i18n.__('esm_only_option_desc'))
   .option(
     '-p, --package-manager <name>',

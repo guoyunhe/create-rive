@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+import fs from 'fs-extra';
 import { basename, join } from 'path';
 import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
@@ -15,7 +17,7 @@ export interface InitOptions {
    *
    * @default "react"
    */
-  template: 'react' | 'react-icons' | 'node' | 'cli';
+  template?: 'react' | 'react-icons' | 'node' | 'cli';
   /**
    * By default, rive generates both CJS and ESM. If esmOnly is enabled, CJS will NOT be generated.
    */
@@ -33,19 +35,31 @@ export async function init(
   { template, esmOnly, packageManager }: InitOptions,
 ) {
   const root = project ? join(process.cwd(), project) : process.cwd();
-  const name = project ? basename(project) : basename(process.cwd());
+  const packageJson = await fs.readJSON(join(root, 'package.json'), {
+    throws: false,
+  });
+  const name = packageJson?.name || basename(root);
 
+  const _template = template || packageJson?.rive?.template || 'react';
+
+  console.log('Selected template:', chalk.cyan(_template));
+
+  console.log('Generating files...');
   removeConflictFiles();
-
   initEditorConfig();
   initGitIgnore();
-  await initPackageJson(root, name, template, esmOnly);
+  await initPackageJson(root, name, _template, esmOnly);
   initTSConfig();
   initVSCodeExtensions();
   initVSCodeSettings();
-
   initGitHubCI();
+  console.log(chalk.green('Done'));
 
+  console.log('Installing node modules...');
   await runCommand(`${packageManager} update`);
+  console.log(chalk.green('Done'));
+
+  console.log('Formating source codes...');
   await runCommand(`${packageManager} run lint:fix`);
+  console.log(chalk.green('Done'));
 }

@@ -108,6 +108,20 @@ export async function initPackageJson(
   packageJson = merge(packageJson, packageJsonConfig, {
     arrayMerge,
   });
+  packageJson = merge(
+    packageJson,
+    {
+      rive: {
+        template,
+        doc: {
+          basename: `/${basename(name)}/`,
+        },
+      },
+    },
+    {
+      arrayMerge,
+    },
+  );
 
   if (esmOnly) {
     packageJson = merge(
