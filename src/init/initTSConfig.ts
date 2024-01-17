@@ -1,5 +1,6 @@
 import merge from 'deepmerge';
 import fse from 'fs-extra';
+import { arrayMerge } from '../private/arrayMerge.js';
 
 // Based on https://www.npmjs.com/package/@tsconfig/vite-react
 const tsconfig = {
@@ -30,7 +31,7 @@ export async function initTSConfig() {
   let tsconfigJson;
   try {
     tsconfigJson = await fse.readJson(filePath);
-    merge(tsconfigJson, tsconfig);
+    merge(tsconfigJson, tsconfig, { arrayMerge });
   } catch (e) {
     tsconfigJson = tsconfig;
   }

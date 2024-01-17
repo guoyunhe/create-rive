@@ -2,7 +2,6 @@ import { basename, join } from 'path';
 import { initEditorConfig } from './initEditorConfig.js';
 import { initGitHubCI } from './initGitHubCI.js';
 import { initGitIgnore } from './initGitIgnore.js';
-import { initGitLabCI } from './initGitLabCI.js';
 import { initPackageJson } from './initPackageJson.js';
 import { initTSConfig } from './initTSConfig.js';
 import { initVSCodeExtensions } from './initVSCodeExtensions.js';
@@ -45,7 +44,6 @@ export async function init(
   initVSCodeExtensions();
   initVSCodeSettings();
 
-  initGitLabCI();
   initGitHubCI();
 
   await runCommand(`${packageManager} update`);

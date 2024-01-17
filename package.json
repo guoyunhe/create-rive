@@ -5,17 +5,22 @@
   "type": "module",
   "bin": "dist/create-rive.js",
   "files": [
-    "lib",
+    "dist",
     "CHANGELOG.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "lib"
   ],
   "scripts": {
+    "init": "tsx src/create-rive.ts --esm-only --package-manager pnpm",
     "build": "rive build",
-    "build:watch": "rive watch",
+    "build:watch": "rive build --watch",
     "lint": "rive lint",
     "lint:fix": "rive lint --fix",
-    "test": "cd example && tsx ../src/create-rive.ts"
+    "test": "rive test",
+    "start": "rive start",
+    "test:watch": "rive test --watch",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -36,10 +41,17 @@
   },
   "homepage": "https://github.com/guoyunhe/create-rive#readme",
   "devDependencies": {
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.2",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",
-    "@types/node": "^20.11.0",
-    "rive": "2.0.0-beta.1",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "gh-pages": "^5.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rive": "^2.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },
@@ -51,5 +63,15 @@
     "fs-extra": "^11.2.0",
     "i18n": "^0.15.1",
     "simple-git": "^3.22.0"
-  }
+  },
+  "main": "./dist/index.js",
+  "style": "dist/index.css",
+  "types": "dist/index.d.ts",
+  "eslintConfig": {
+    "extends": "rive"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-rive"
+  },
+  "prettier": "prettier-config-rive"
 }

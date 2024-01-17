@@ -1,6 +1,7 @@
 import merge from 'deepmerge';
 import fse from 'fs-extra';
 import { join } from 'path';
+import { arrayMerge } from '../private/arrayMerge.js';
 
 const settingsConfig = {
   'eslint.validate': [
@@ -58,7 +59,9 @@ export async function initVSCodeSettings() {
   let settingsJson;
   try {
     settingsJson = await fse.readJson(settingsFilePath);
-    merge(settingsJson, settingsConfig);
+    merge(settingsJson, settingsConfig, {
+      arrayMerge,
+    });
   } catch (e) {
     settingsJson = settingsConfig;
   }

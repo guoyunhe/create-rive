@@ -1,6 +1,7 @@
 import merge from 'deepmerge';
 import fse from 'fs-extra';
 import { basename, join } from 'path';
+import { arrayMerge } from '../private/arrayMerge.js';
 
 const packageJsonConfig = {
   main: 'dist/cjs/index.js',
@@ -77,7 +78,7 @@ const packageJsonConfig = {
     'webpack-bundle-analyzer': undefined,
   },
   eslintConfig: {
-    extends: 'rive',
+    extends: 'eslint-config-rive',
   },
   stylelint: {
     extends: 'stylelint-config-rive',
@@ -101,17 +102,25 @@ export async function initPackageJson(
 
   // fill missing
   packageJson = merge({ name, version: '0.0.1' }, packageJson, {
-    arrayMerge: (target, source) => Array.from(new Set([...source, ...target])),
+    arrayMerge,
   });
   // override existing
-  packageJson = merge(packageJson, packageJsonConfig);
+  packageJson = merge(packageJson, packageJsonConfig, {
+    arrayMerge,
+  });
 
   if (esmOnly) {
-    packageJson = merge(packageJson, {
-      type: 'module',
-      main: './dist/index.js',
-      module: undefined,
-    });
+    packageJson = merge(
+      packageJson,
+      {
+        type: 'module',
+        main: './dist/index.js',
+        module: undefined,
+      },
+      {
+        arrayMerge,
+      },
+    );
   }
 
   if (template === 'cli') {

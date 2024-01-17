@@ -1,5 +1,6 @@
 import merge from 'deepmerge';
 import fse from 'fs-extra';
+import { arrayMerge } from '../private/arrayMerge.js';
 
 const { readJsonSync, writeJsonSync } = fse;
 
@@ -20,6 +21,8 @@ const config = {
 
 export function updateDocusaurusConfig() {
   const tsconfigJson = readJsonSync(filePath, { throws: false }) || {};
-  merge(tsconfigJson, config);
+  merge(tsconfigJson, config, {
+    arrayMerge,
+  });
   writeJsonSync(filePath, tsconfigJson, { spaces: 2 });
 }
