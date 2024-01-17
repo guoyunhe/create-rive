@@ -29,7 +29,7 @@
     "@types/react-dom": "^18.0.0",
     "@types/jest": "^18.0.0",
     "jest": "^28.0.0",
-    "rive": "latest",
+    "rive": "beta",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "ts-jest": "^28.0.0",
@@ -42,5 +42,6 @@
   },
   "stylelint": {
     "extends": "stylelint-config-rive"
-  }
+  },
+  "prettier": "prettier-config-rive"
 }
