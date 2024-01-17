@@ -57,16 +57,10 @@
     "simple-git": "^3.22.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.2",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",
     "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
     "gh-pages": "^5.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rive": "^2.0.1",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
@@ -76,8 +70,5 @@
     "doc": {
       "basename": "/create-rive/"
     }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-rive"
   }
 }
