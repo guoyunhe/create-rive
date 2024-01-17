@@ -2,7 +2,28 @@
   "name": "create-rive",
   "version": "1.0.0",
   "description": "Effortless React Library Development Experience",
+  "keywords": [
+    "react",
+    "typescript",
+    "library",
+    "component",
+    "vite",
+    "document"
+  ],
+  "homepage": "https://github.com/guoyunhe/create-rive#readme",
+  "bugs": {
+    "url": "https://github.com/guoyunhe/create-rive/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guoyunhe/create-rive.git"
+  },
+  "license": "MIT",
+  "author": "Guo Yunhe",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "bin": "dist/create-rive.js",
   "files": [
     "dist",
@@ -12,34 +33,32 @@
     "lib"
   ],
   "scripts": {
-    "init": "tsx src/create-rive.ts --esm-only --package-manager pnpm",
     "build": "rive build",
     "build:watch": "rive build --watch",
+    "deploy": "gh-pages -d build",
+    "init": "tsx src/create-rive.ts --esm-only --package-manager pnpm",
     "lint": "rive lint",
     "lint:fix": "rive lint --fix",
-    "test": "rive test",
     "start": "rive start",
-    "test:watch": "rive test --watch",
-    "deploy": "gh-pages -d build"
+    "test": "rive test",
+    "test:watch": "rive test --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/guoyunhe/create-rive.git"
+  "prettier": "prettier-config-rive",
+  "eslintConfig": {
+    "extends": "rive"
   },
-  "keywords": [
-    "react",
-    "typescript",
-    "library",
-    "component",
-    "vite",
-    "document"
-  ],
-  "author": "Guo Yunhe",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/guoyunhe/create-rive/issues"
+  "stylelint": {
+    "extends": "stylelint-config-rive"
   },
-  "homepage": "https://github.com/guoyunhe/create-rive#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "deepmerge": "^4.3.1",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "i18n": "^0.15.1",
+    "simple-git": "^3.22.0"
+  },
   "devDependencies": {
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
@@ -54,24 +73,5 @@
     "rive": "^2.0.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "chalk": "^5.3.0",
-    "commander": "^11.1.0",
-    "deepmerge": "^4.3.1",
-    "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
-    "i18n": "^0.15.1",
-    "simple-git": "^3.22.0"
-  },
-  "main": "./dist/index.js",
-  "style": "dist/index.css",
-  "types": "dist/index.d.ts",
-  "eslintConfig": {
-    "extends": "rive"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-rive"
-  },
-  "prettier": "prettier-config-rive"
+  }
 }
