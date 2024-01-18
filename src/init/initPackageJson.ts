@@ -133,10 +133,6 @@ export async function initPackageJson(
           devDependencies: {
             '@testing-library/react': '^14.0.0',
             '@testing-library/user-event': '^14.0.0',
-            '@types/react': '^18.0.0',
-            '@types/react-dom': '^18.0.0',
-            react: '^18.0.0',
-            'react-dom': '^18.0.0',
           },
           eslintConfig: {
             extends: 'eslint-config-rive/react',
