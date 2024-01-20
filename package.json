@@ -57,11 +57,17 @@
     "simple-git": "^3.22.0"
   },
   "devDependencies": {
+    "@mdx-js/react": "^3.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",
     "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "gh-pages": "^5.0.0",
-    "rive": "^2.0.2",
+    "react": "^18.2.0",
+    "react-doc-ui": "^2.0.1",
+    "react-dom": "^18.2.0",
+    "rive": "^2.0.3",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },

@@ -37,9 +37,16 @@ export async function initPackageJson(
         deploy: 'gh-pages -d build',
         // things to remove
         format: undefined,
+        watch: undefined,
       },
       devDependencies: {
+        '@mdx-js/react': '^3.0.0',
+        '@types/react': '^18.2.0',
+        '@types/react-dom': '^18.2.0',
         'gh-pages': '^5.0.0',
+        react: '^18.2.0',
+        'react-dom': '^18.2.0',
+        'react-doc-ui': '^2.0.0',
         rive: '^2.0.0',
         typescript: '^5.0.0',
 
@@ -164,7 +171,7 @@ export async function initPackageJson(
       );
       break;
     default:
-      packageJson = packageJson;
+      break;
   }
 
   await fse.writeJson(filePath, packageJson, { spaces: 2 });

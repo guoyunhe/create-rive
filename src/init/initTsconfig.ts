@@ -2,26 +2,36 @@ import merge from 'deepmerge';
 import fse from 'fs-extra';
 import { arrayMerge } from '../private/arrayMerge.js';
 
-const nodeTsconfig = {
+const baseTsconfig = {
   compilerOptions: {
     target: 'esnext',
     lib: ['esnext'],
-    allowJs: false,
-    skipLibCheck: false,
-    esModuleInterop: false,
-    allowSyntheticDefaultImports: true,
-    strict: true,
-    forceConsistentCasingInFileNames: true,
+    allowJs: true,
+    checkJs: false,
+    skipLibCheck: true,
+    esModuleInterop: true,
     module: 'esnext',
     moduleResolution: 'node',
     resolveJsonModule: true,
     isolatedModules: true,
-    types: ['vitest/globals'],
+    types: ['rive/globals'],
   },
+  include: ['src'],
+  exclude: ['**/*.spec.js', '**/*.spec.ts', '**/*.test.js', '**/*.test.ts'],
 };
 
+const nodeTsconfig = merge(
+  baseTsconfig,
+  {
+    compilerOptions: {
+      types: ['node'],
+    },
+  },
+  { arrayMerge },
+);
+
 const reactTsconfig = merge(
-  nodeTsconfig,
+  baseTsconfig,
   {
     compilerOptions: {
       target: 'esnext',
@@ -29,6 +39,12 @@ const reactTsconfig = merge(
       module: 'esnext',
       jsx: 'react-jsx',
     },
+    exclude: [
+      '**/*.spec.jsx',
+      '**/*.spec.tsx',
+      '**/*.test.jsx',
+      '**/*.test.tsx',
+    ],
   },
   { arrayMerge },
 );
@@ -36,7 +52,7 @@ const reactTsconfig = merge(
 const filePath = './tsconfig.json';
 
 export async function initTsconfig(template: string) {
-  let tsconfigOverride: any = {};
+  let tsconfigOverride: Partial<unknown> = {};
   switch (template) {
     case 'react':
     case 'react-icons':
@@ -46,7 +62,7 @@ export async function initTsconfig(template: string) {
       tsconfigOverride = nodeTsconfig;
   }
 
-  let tsconfig: any;
+  let tsconfig: Partial<unknown>;
   try {
     tsconfig = (await fse.readJson(filePath, { throws: false })) || {};
     tsconfig = merge(tsconfig, tsconfigOverride, { arrayMerge });
