@@ -3,12 +3,12 @@
   "version": "1.0.1",
   "description": "Effortless React/Node.js library development experience",
   "keywords": [
+    "component",
+    "document",
+    "library",
     "react",
     "typescript",
-    "library",
-    "component",
-    "vite",
-    "document"
+    "vite"
   ],
   "homepage": "https://github.com/guoyunhe/create-rive#readme",
   "bugs": {
@@ -26,10 +26,10 @@
   "style": "dist/index.css",
   "bin": "dist/create-rive.js",
   "files": [
-    "dist",
     "CHANGELOG.md",
     "LICENSE",
     "README.md",
+    "dist",
     "locales"
   ],
   "scripts": {
