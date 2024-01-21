@@ -1,5 +1,6 @@
 import merge from 'deepmerge';
 import fse from 'fs-extra';
+import { getPackageJsonFromGit } from 'package-json-from-git';
 import { basename, join } from 'path';
 import { arrayMerge } from '../private/arrayMerge.js';
 
@@ -14,6 +15,9 @@ export async function initPackageJson(
 
   // fill missing
   packageJson = merge({ name, version: '0.0.1' }, packageJson, {
+    arrayMerge,
+  });
+  packageJson = merge(await getPackageJsonFromGit(), packageJson, {
     arrayMerge,
   });
 
