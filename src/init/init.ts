@@ -35,11 +35,17 @@ export async function init(
   { template, esmOnly, packageManager }: InitOptions,
 ) {
   const root = project ? join(process.cwd(), project) : process.cwd();
-  const packageJson = await fs.readJSON(join(root, 'package.json'), {
-    throws: false,
-  });
-  const name = packageJson?.name || basename(root);
 
+  let packageJson: any;
+  try {
+    packageJson = await fs.readJSON(join(root, 'package.json'), {
+      throws: false,
+    });
+  } catch (e) {
+    //
+  }
+
+  const name = packageJson?.name || basename(root);
   const _template = template || packageJson?.rive?.template || 'react';
 
   console.log('Selected template:', chalk.cyan(_template));

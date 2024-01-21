@@ -11,7 +11,13 @@ export async function initPackageJson(
   esmOnly: boolean,
 ) {
   const filePath = join(root, 'package.json');
-  let packageJson = (await fse.readJson(filePath, { throws: false })) || {};
+
+  let packageJson: any = {};
+  try {
+    packageJson = await fse.readJson(filePath, { throws: false });
+  } catch (e) {
+    //
+  }
 
   // fill missing
   packageJson = merge({ name, version: '0.0.1' }, packageJson, {
