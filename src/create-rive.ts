@@ -12,7 +12,7 @@ const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 
 
 i18n.configure({
   locales: ['en', 'zh'],
-  directory: join(__dirname, 'locales'),
+  directory: join(__dirname, '../locales'),
 });
 
 i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
