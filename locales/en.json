@@ -3,5 +3,5 @@
   "version_option_desc": "Show version",
   "template_option_desc": "Template to use (available: \"react\", \"react-icons\", \"node\", \"cli\")",
   "esm_only_option_desc": "Only output ESM and don't output CJS",
-  "package_manager_option_desc": "Package manager to install dependencies"
+  "project_argument_desc": "Project location"
 }
