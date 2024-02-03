@@ -37,7 +37,7 @@
   "rive": {
     "template": "base",
     "doc": {
-      "basename": "<%= basename %>"
+      "basename": "/<%= basename %>/"
     }
   }
 }
