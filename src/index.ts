@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { init } from 'init-roll';
 import { basename, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { runCommand } from './init/runCommand';
+import { runCommand } from './private/runCommand';
 
 export interface InitOptions {
   /**

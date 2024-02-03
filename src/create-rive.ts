@@ -5,7 +5,7 @@ import { readFileSync } from 'fs';
 import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { init } from './init/init.js';
+import { createRive } from '.';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
@@ -23,7 +23,7 @@ program
   .argument('[project]', i18n.__('project_argument_desc'))
   .option('-t, --template <name>', i18n.__('template_option_desc'))
   .option('-e, --esm-only', i18n.__('esm_only_option_desc'))
-  .action(init);
+  .action(createRive);
 
 program.helpOption('-h, --help', i18n.__('help_option_desc'));
 
