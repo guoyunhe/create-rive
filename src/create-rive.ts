@@ -2,7 +2,6 @@
 
 import { Command } from 'commander';
 import { readFileSync } from 'fs';
-import i18n from 'i18n';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { createRive } from '.';
@@ -10,23 +9,18 @@ import { createRive } from '.';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const packageJson = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf-8'));
 
-i18n.configure({
-  locales: ['en', 'zh'],
-  directory: join(__dirname, 'locales'),
-});
-
-i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
-
 const program = new Command('create-rive');
 
 program
-  .argument('[project]', i18n.__('project_argument_desc'))
-  .option('-t, --template <name>', i18n.__('template_option_desc'))
-  .option('-e, --esm-only', i18n.__('esm_only_option_desc'))
-  .action(createRive);
+  .argument('<first-name>', 'First name')
+  .argument('<last-name>', 'Last name')
+  .option('--last-name-upper-case', 'Transform last name to upper case')
+  .action((firstName, lastName, options) => {
+    console.log(createRive(firstName, lastName, options));
+  });
 
-program.helpOption('-h, --help', i18n.__('help_option_desc'));
+program.helpOption('-h, --help', 'Show command help');
 
-program.version(packageJson.version, '-v, --version', i18n.__('version_option_desc'));
+program.version(packageJson.version, '-v, --version', 'Show command version');
 
 program.parse();
