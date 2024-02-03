@@ -1,0 +1,13 @@
+import cn from 'classnames';
+import { CSSProperties, ReactNode } from 'react';
+import './index.css';
+
+export interface <%= componentName %>Props {
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+export function <%= componentName %>({ children, className, style }: <%= componentName %>Props) {
+  return <<%= componentName %> className={cn('<%= basename %>', className)} style={style}>{children}</<%= componentName %>>;
+}

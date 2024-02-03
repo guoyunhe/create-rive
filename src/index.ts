@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import { camelCase, pascalCase } from 'change-case';
 import fs from 'fs-extra';
 import { init } from 'init-roll';
 import { basename, dirname, join } from 'path';
@@ -36,9 +37,11 @@ export async function createRive(project: string | null, { template, esmOnly }: 
   const _template = template || packageJson?.rive?.template || 'react';
   const params = {
     name,
+    basename: basename(name),
+    functionName: camelCase(basename(name)),
+    componentName: pascalCase(basename(name)),
     description: packageJson.description || '',
     esmOnly,
-    basename: basename(name),
   };
 
   console.log('Selected template:', chalk.cyan(_template));
