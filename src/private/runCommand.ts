@@ -12,12 +12,8 @@ export async function runCommand(command: string) {
 
     child.on('exit', (code) => {
       resolve(code);
-      ['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((signal) =>
-        process.off(signal, handleCancel),
-      );
+      ['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((signal) => process.off(signal, handleCancel));
     });
-    ['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((signal) =>
-      process.on(signal, handleCancel),
-    );
+    ['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((signal) => process.on(signal, handleCancel));
   });
 }
