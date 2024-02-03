@@ -47,21 +47,21 @@ export async function createRive(project: string | null, { template, esmOnly }: 
   console.log('Selected template:', chalk.cyan(_template));
 
   console.log('Generating files...');
-  await init(join(__dirname, '../template/base'), root, params);
+  await init(join(__dirname, '../templates/base'), root, params);
   switch (_template) {
     case 'node':
-      await init(join(__dirname, '../template/node'), root, params);
+      await init(join(__dirname, '../templates/node'), root, params);
       break;
     case 'cli':
-      await init(join(__dirname, '../template/node'), root, params);
-      await init(join(__dirname, '../template/cli'), root, params);
+      await init(join(__dirname, '../templates/node'), root, params);
+      await init(join(__dirname, '../templates/cli'), root, params);
       break;
     case 'react':
-      await init(join(__dirname, '../template/react'), root, params);
+      await init(join(__dirname, '../templates/react'), root, params);
       break;
     case 'react-icons':
-      await init(join(__dirname, '../template/react'), root, params);
-      await init(join(__dirname, '../template/react-icons'), root, params);
+      await init(join(__dirname, '../templates/react'), root, params);
+      await init(join(__dirname, '../templates/react-icons'), root, params);
       break;
     default:
       break;
