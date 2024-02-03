@@ -23,7 +23,6 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
-  "style": "dist/index.css",
   "bin": "dist/create-rive.js",
   "files": [
     "CHANGELOG.md",
