@@ -1,5 +1,10 @@
 {
+  "typings": null,
   "husky": null,
+  "scripts": {
+    "dev": null,
+    "watch": null
+  },
   "devDependencies": {
     "@babel/cli": null,
     "@babel/core": null,
