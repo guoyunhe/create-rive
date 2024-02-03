@@ -45,6 +45,7 @@
     "postcss-pxtorem": null,
     "prettier": null,
     "ts-jest": null,
+    "ts-loader": null,
     "tslint": null,
     "vite": null,
     "vitest": null,
