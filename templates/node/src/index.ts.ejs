@@ -1,0 +1,10 @@
+export interface <%= componentName %>Options {
+  lastNameUpperCase?: boolean;
+}
+
+export function <%= functionName %>(firstName: string, lastName: string, options?: <%= componentName %>Options) {
+  if (options?.lastNameUpperCase) {
+    return firstName + ' ' + lastName.toLocaleUpperCase();
+  }
+  return firstName + ' ' + lastName;
+}
