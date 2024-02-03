@@ -34,7 +34,7 @@ export async function createRive(project: string | null, { template, esmOnly }: 
   }
 
   const name = packageJson?.name || basename(root);
-  const _template = template || packageJson?.rive?.template || 'react';
+  const _template = template || packageJson?.rive?.template || 'base';
   const params = {
     name,
     basename: basename(name),
