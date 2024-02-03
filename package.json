@@ -30,7 +30,8 @@
     "LICENSE",
     "README.md",
     "dist",
-    "locales"
+    "locales",
+    "templates"
   ],
   "scripts": {
     "build": "rive build",
