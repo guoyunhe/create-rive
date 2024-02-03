@@ -54,7 +54,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "i18n": "^0.15.1",
-    "init-roll": "^1.0.3",
+    "init-roll": "^1.0.4",
     "package-json-from-git": "^1.2.2",
     "simple-git": "^3.22.0"
   },
