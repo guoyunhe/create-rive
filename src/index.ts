@@ -42,6 +42,7 @@ export async function createRive(project: string | null, { template, esmOnly }: 
     componentName: pascalCase(basename(name)),
     description: packageJson.description || '',
     esmOnly,
+    template: _template,
   };
 
   console.log('Selected template:', chalk.cyan(_template));

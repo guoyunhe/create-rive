@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2015",
     "lib": ["esnext"],
     "allowJs": true,
     "checkJs": false,
@@ -13,5 +13,5 @@
     "types": ["node", "rive/globals"],
   },
   "include": ["src"],
-  "exclude": ["**/*.spec.js", "**/*.spec.ts", "**/*.test.js", "**/*.test.ts"],
+  "exclude": [".rive", "build", "coverage", "dist", "node_modules"],
 }
