@@ -37,7 +37,7 @@
     "build": "rive build",
     "build:watch": "rive build --watch",
     "deploy": "gh-pages -d build",
-    "init": "tsx src/create-rive.ts --esm-only --package-manager pnpm",
+    "init": "tsx src/create-rive.ts --esm-only",
     "lint": "rive lint",
     "lint:fix": "rive lint --fix",
     "start": "rive start",
@@ -52,7 +52,7 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "change-case": "^5.4.2",
-    "commander": "^11.0.0",
+    "commander": "^12.0.0",
     "deepmerge": "^4.3.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",

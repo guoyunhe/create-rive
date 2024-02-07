@@ -1,6 +1,6 @@
 {
   "bin": "dist/<%= basename %>.js",
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^12.0.0"
   }
 }
