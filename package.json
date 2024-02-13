@@ -36,7 +36,6 @@
   "scripts": {
     "build": "rive build",
     "build:watch": "rive build --watch",
-    "deploy": "gh-pages -d build",
     "init": "tsx src/create-rive.ts --esm-only",
     "lint": "rive lint",
     "lint:fix": "rive lint --fix",
@@ -62,18 +61,17 @@
     "simple-git": "^3.22.0"
   },
   "devDependencies": {
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^3.0.1",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.10",
-    "@types/node": "^20.11.16",
+    "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.18",
-    "gh-pages": "^5.0.0",
+    "@types/react-dom": "^18.2.19",
     "react": "^18.2.0",
-    "react-doc-ui": "^2.2.1",
+    "react-doc-ui": "^2.2.6",
     "react-dom": "^18.2.0",
-    "rive": "^2.0.22",
-    "tsx": "^4.7.0",
+    "rive": "^2.0.30",
+    "tsx": "^4.7.1",
     "typescript": "^5.3.3"
   },
   "rive": {
