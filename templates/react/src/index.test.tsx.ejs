@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { <%= componentName %> } from '.';
 
 describe('<%= componentName %>', () => {
-  describe('render', async () => {
+  it('render', async () => {
     render(<<%= componentName %>>foobar</<%= componentName %>>);
     await screen.findByText('foobar');
   });
