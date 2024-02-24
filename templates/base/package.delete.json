@@ -4,11 +4,14 @@
   "jest": null,
   "scripts": {
     "dev": null,
-    "watch": null
+    "watch": null,
+    "eslint": null,
+    "prettier": null
   },
   "devDependencies": {
     "@babel/cli": null,
     "@babel/core": null,
+    "@babel/node": null,
     "@babel/plugin-transform-modules-commonjs": null,
     "@babel/preset-env": null,
     "@babel/preset-react": null,
@@ -16,6 +19,7 @@
     "@guoyunhe/react-lib-scripts": null,
     "@guoyunhe/node-scripts": null,
     "@jest/types": null,
+    "@pika/pack": null,
     "@types/jest": null,
     "@typescript-eslint/eslint-plugin": null,
     "@typescript-eslint/parser": null,
@@ -25,7 +29,9 @@
     "@vitejs/plugin-react-swc": null,
     "@vitest/ui": null,
     "autoprefixer": null,
+    "babel-jest": null,
     "babel-loader": null,
+    "coveralls": null,
     "css-loader": null,
     "dumi": null,
     "eslint": null,
@@ -50,6 +56,9 @@
     "jsdom": null,
     "less": null,
     "node-sass": null,
+    "np": null,
+    "pika-plugin-build-web-babel": null,
+    "pika-plugin-ts-types": null,
     "postcss": null,
     "postcss-px-multiple": null,
     "postcss-pxtorem": null,
@@ -65,5 +74,6 @@
     "webpack-bundle-analyzer": null,
     "webpack-cli": null,
     "webpack-stream": null
-  }
+  },
+  "@pika/pack": null
 }
