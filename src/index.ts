@@ -48,7 +48,9 @@ export async function createRive(project: string | null, { template, esmOnly }: 
   console.log('Selected template:', chalk.cyan(_template));
 
   console.log('Generating files...');
-  await init(join(__dirname, '../templates/base'), root, params);
+  await init(join(__dirname, '../templates/base'), root, params, {
+    bumpDependencies: true,
+  });
   switch (_template) {
     case 'node':
       await init(join(__dirname, '../templates/node'), root, params);
