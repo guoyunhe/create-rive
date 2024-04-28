@@ -50,29 +50,29 @@
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "change-case": "^5.4.3",
+    "change-case": "^5.4.4",
     "commander": "^12.0.0",
     "deepmerge": "^4.3.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "i18n": "^0.15.1",
-    "init-roll": "^1.0.14",
+    "init-roll": "^1.3.0",
     "package-json-from-git": "^1.2.2",
-    "simple-git": "^3.22.0"
+    "simple-git": "^3.24.0"
   },
   "devDependencies": {
     "@mdx-js/react": "^3.0.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/i18n": "^0.13.10",
-    "@types/node": "^20.11.20",
-    "@types/react": "^18.2.58",
-    "@types/react-dom": "^18.2.19",
-    "react": "^18.2.0",
+    "@types/i18n": "^0.13.12",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
     "react-doc-ui": "^2.2.6",
-    "react-dom": "^18.2.0",
-    "rive": "^2.0.32",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "react-dom": "^18.3.1",
+    "rive": "^2.0.33",
+    "tsx": "^4.7.3",
+    "typescript": "^5.4.5"
   },
   "rive": {
     "template": "cli",
