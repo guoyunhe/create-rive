@@ -6,6 +6,6 @@
   "project_argument_desc": "Project location",
   "canceled": "Canceled",
   "initializing": "Initializing...",
-  "initialize_succeeded": "Initialization succeeded",
-  "initialize_failed": "Initialization failed"
+  "initialization_succeeded": "Initialization succeeded",
+  "initialization_failed": "Initialization failed"
 }

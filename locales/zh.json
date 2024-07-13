@@ -6,6 +6,6 @@
   "project_argument_desc": "项目位置",
   "canceled": "已取消",
   "initializing": "正在初始化...",
-  "initialize_succeeded": "初始化成功",
-  "initialize_failed": "初始化失败"
+  "initialization_succeeded": "初始化成功",
+  "initialization_failed": "初始化失败"
 }
