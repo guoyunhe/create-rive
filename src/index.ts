@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { camelCase, pascalCase } from 'change-case';
 import fs from 'fs-extra';
 import { init } from 'init-roll';
-import { basename, dirname, join } from 'path';
+import { basename, dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { runCommand } from './private/runCommand';
 
@@ -22,7 +22,7 @@ export interface InitOptions {
 export async function createRive(project: string | null, { template, esmOnly }: InitOptions) {
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
-  const root = project ? join(process.cwd(), project) : process.cwd();
+  const root = resolve(project || '.');
 
   let packageJson: any;
   try {
@@ -40,7 +40,7 @@ export async function createRive(project: string | null, { template, esmOnly }: 
     basename: basename(name),
     functionName: camelCase(basename(name)),
     componentName: pascalCase(basename(name)),
-    description: packageJson.description || '',
+    description: packageJson?.description || '',
     esmOnly,
     template: _template,
   };
