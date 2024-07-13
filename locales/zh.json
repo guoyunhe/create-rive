@@ -3,5 +3,9 @@
   "version_option_desc": "显示版本",
   "template_option_desc": "要使用的模板 (可用: \"base\", \"react\", \"react-icons\", \"node\", \"cli\")",
   "esm_only_option_desc": "只输出 ESM 产物, 不输出 CJS 产物",
-  "project_argument_desc": "项目位置"
+  "project_argument_desc": "项目位置",
+  "canceled": "已取消",
+  "initializing": "正在初始化...",
+  "initialize_succeeded": "初始化成功",
+  "initialize_failed": "初始化失败"
 }
