@@ -1,11 +1,11 @@
 import { <%= functionName %> } from '.';
 
 describe('<%= functionName %>', () => {
-  describe('normal', async () => {
+  it('normal', async () => {
     expect(<%= functionName %>('Foo', 'Bar')).toBe('Foo Bar');
   });
 
-  describe('lastName upper case', async () => {
+  it('lastName upper case', async () => {
     expect(<%= functionName %>('Foo', 'Bar', { lastNameUpperCase: true })).toBe('Foo BAR');
   });
 });
