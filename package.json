@@ -36,7 +36,7 @@
   "scripts": {
     "build": "rive build",
     "build:watch": "rive build --watch",
-    "init": "tsx src/create-rive.ts --esm-only",
+    "init": "tsx src/create-rive.ts",
     "lint": "rive lint",
     "lint:fix": "rive lint --fix",
     "start": "rive start",

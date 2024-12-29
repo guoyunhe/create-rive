@@ -1,6 +1,7 @@
 {
   "typings": null,
   "eslintConfig": null,
+  "module": null,
   "husky": null,
   "jest": null,
   "scripts": {

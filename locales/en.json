@@ -2,7 +2,6 @@
   "help_option_desc": "Show help",
   "version_option_desc": "Show version",
   "template_option_desc": "Template to use (available: \"base\", \"react\", \"react-icons\", \"node\", \"cli\")",
-  "esm_only_option_desc": "Only output ESM and don't output CJS",
   "project_argument_desc": "Project location",
   "canceled": "Canceled",
   "initializing": "Initializing...",

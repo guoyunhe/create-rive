@@ -12,13 +12,9 @@ export interface InitOptions {
    * @default "react"
    */
   template?: 'react' | 'react-icons' | 'node' | 'cli';
-  /**
-   * By default, rive generates both CJS and ESM. If esmOnly is enabled, CJS will NOT be generated.
-   */
-  esmOnly: boolean;
 }
 
-export async function createRive(project: string | null, { template, esmOnly }: InitOptions) {
+export async function createRive(project: string | null, { template }: InitOptions) {
   const __dirname = dirname(fileURLToPath(import.meta.url));
 
   const root = resolve(project || '.');
@@ -40,7 +36,6 @@ export async function createRive(project: string | null, { template, esmOnly }: 
     functionName: camelCase(basename(name)),
     componentName: pascalCase(basename(name)),
     description: packageJson?.description || '',
-    esmOnly,
     template: _template,
   };
 

@@ -8,12 +8,6 @@ Create various npm package projects
 npm create rive my-pkg
 ```
 
-## ESM only
-
-```bash
-npm create rive --esm-only my-pkg
-```
-
 ## Node.js
 
 ```bash

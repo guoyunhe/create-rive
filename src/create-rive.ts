@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { cancel, confirm, intro, isCancel, outro, select, text } from '@clack/prompts';
+import { cancel, intro, isCancel, outro, select, text } from '@clack/prompts';
 import chalk from 'chalk';
 import { Command } from 'commander';
 import { readFileSync } from 'fs';
@@ -26,7 +26,6 @@ if (process.argv.length > 3) {
   program
     .argument('[project]', i18n.__('project_argument_desc'))
     .option('-t, --template <name>', i18n.__('template_option_desc'))
-    .option('-e, --esm-only', i18n.__('esm_only_option_desc'))
     .action(createRive);
 
   program.helpOption('-h, --help', i18n.__('help_option_desc'));
@@ -77,19 +76,9 @@ if (process.argv.length > 3) {
       process.exit(0);
     }
 
-    const esmOnly = await confirm({
-      message: '🧰 ' + i18n.__('esm_only_option_desc'),
-    });
-
-    if (isCancel(esmOnly)) {
-      cancel('👋 ' + i18n.__('canceled'));
-      process.exit(0);
-    }
-
     try {
       await createRive(projectPath, {
         template,
-        esmOnly,
       });
       outro('✅ ' + i18n.__('initialization_succeeded'));
     } catch (error) {

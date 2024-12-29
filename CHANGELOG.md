@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.0 - 2024-12-29
+
+- Removed cjs support
+
 ## 3.4.0 - 2024-12-29
 
 - Changed build target from `es2015` to `es2017`
