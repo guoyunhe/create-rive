@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.0 - 2024-12-29
+
+- Added `react` 19.x support
+
 ## 3.2.1 - 2024-12-29
 
 - Fixed interactive mode
