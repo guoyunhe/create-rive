@@ -1,6 +1,10 @@
 # Changelog
 
-## 3.2.0 - 2024-12-28
+## 3.2.1 - 2024-12-29
+
+- Fixed interactive mode
+
+## 3.2.0 - 2024-12-29
 
 - Updated `rive` from 2.x to 3.x
 - Changed `eslint` configuration file
