@@ -19,7 +19,7 @@ i18n.configure({
 
 i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
 
-if (process.argv.length > 2 && !process.argv.includes('init')) {
+if (process.argv.length > 3) {
   // Non-interactive
   const program = new Command('create-rive');
 
