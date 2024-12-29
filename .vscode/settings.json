@@ -8,17 +8,8 @@
   "files.associations": {
     "*.ejs": "plaintext"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "stylelint.validate": [
-    "css",
-    "less",
-    "scss"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "stylelint.validate": ["css", "less", "scss"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[javascript]": {
