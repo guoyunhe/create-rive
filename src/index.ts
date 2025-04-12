@@ -25,7 +25,7 @@ export async function createRive(project: string | null, { template }: InitOptio
     packageJson = await fs.readJSON(join(root, 'package.json'), {
       throws: false,
     });
-  } catch (e) {
+  } catch {
     //
   }
 
@@ -37,7 +37,7 @@ export async function createRive(project: string | null, { template }: InitOptio
     stylelint: ['web', 'react', 'react-icons'].includes(_template),
     prettier: true,
     lintStaged: true,
-    commitlint: true,
+    commitlint: false,
     disableLog: true,
   });
 
