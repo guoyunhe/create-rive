@@ -46,11 +46,6 @@
     "test:ui": "rive test --ui",
     "test:watch": "rive test --watch"
   },
-  "commitlint": {
-    "extends": [
-      "ali"
-    ]
-  },
   "lint-staged": {
     "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}": "eslint --fix",
     "*.{cjs,css,cts,html,js,json,jsx,less,md,mjs,mts,scss,ts,tsx,vue,yaml,yml}": "prettier --write"
@@ -73,14 +68,12 @@
     "simple-git": "^3.27.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
     "@mdx-js/react": "^3.1.0",
     "@types/fs-extra": "^11.0.4",
     "@types/i18n": "^0.13.12",
     "@types/node": "^20.17.30",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
-    "commitlint-config-ali": "^1.1.0",
     "eslint-config-ali": "^16.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
