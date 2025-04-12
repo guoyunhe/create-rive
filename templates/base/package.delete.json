@@ -1,14 +1,10 @@
 {
   "typings": null,
-  "eslintConfig": null,
   "module": null,
-  "husky": null,
   "jest": null,
   "scripts": {
     "dev": null,
-    "watch": null,
-    "eslint": null,
-    "prettier": null
+    "watch": null
   },
   "devDependencies": {
     "@babel/cli": null,
@@ -23,8 +19,6 @@
     "@jest/types": null,
     "@pika/pack": null,
     "@types/jest": null,
-    "@typescript-eslint/eslint-plugin": null,
-    "@typescript-eslint/parser": null,
     "@umijs/types": null,
     "@vitejs/plugin-legacy": null,
     "@vitejs/plugin-react": null,
@@ -36,13 +30,6 @@
     "coveralls": null,
     "css-loader": null,
     "dumi": null,
-    "eslint": null,
-    "eslint-config-prettier": null,
-    "eslint-plugin-import": null,
-    "eslint-plugin-jest": null,
-    "eslint-plugin-prettier": null,
-    "eslint-plugin-react": null,
-    "eslint-plugin-react-hooks": null,
     "gulp": null,
     "gulp-babel": null,
     "gulp-less": null,
