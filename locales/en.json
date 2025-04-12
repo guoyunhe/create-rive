@@ -1,7 +1,7 @@
 {
   "help_option_desc": "Show help",
   "version_option_desc": "Show version",
-  "template_option_desc": "Template to use (available: \"base\", \"react\", \"react-icons\", \"node\", \"cli\")",
+  "template_option_desc": "Project template",
   "project_argument_desc": "Project location",
   "canceled": "Canceled",
   "initializing": "Initializing...",

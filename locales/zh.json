@@ -1,7 +1,7 @@
 {
   "help_option_desc": "显示帮助",
   "version_option_desc": "显示版本",
-  "template_option_desc": "要使用的模板 (可用: \"base\", \"react\", \"react-icons\", \"node\", \"cli\")",
+  "template_option_desc": "项目模板",
   "project_argument_desc": "项目位置",
   "canceled": "已取消",
   "initializing": "正在初始化...",
