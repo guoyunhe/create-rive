@@ -62,7 +62,7 @@
     "change-case": "^5.4.4",
     "commander": "^12.1.0",
     "deepmerge": "^4.3.1",
-    "f2elint": "^5.0.3",
+    "f2elint": "^5.0.4",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
     "i18n": "^0.15.1",
