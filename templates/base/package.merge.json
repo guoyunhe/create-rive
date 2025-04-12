@@ -9,9 +9,7 @@
     "build:watch": "rive build --watch",
     "test": "rive test",
     "test:watch": "rive test --watch",
-    "test:ui": "rive test --ui",
-    "lint": "rive lint",
-    "lint:fix": "rive lint --fix"
+    "test:ui": "rive test --ui"
   },
   "devDependencies": {
     "@mdx-js/react": "^3.0.0",
@@ -24,7 +22,6 @@
     "rive": "^3.0.0",
     "typescript": "^5.0.0"
   },
-  "prettier": "prettier-config-rive",
   "rive": {
     "template": "<%= template %>",
     "doc": {

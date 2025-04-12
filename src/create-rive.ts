@@ -25,7 +25,7 @@ if (process.argv.length > 3) {
 
   program
     .argument('[project]', i18n.__('project_argument_desc'))
-    .option('-t, --template <name>', i18n.__('template_option_desc'))
+    .option('-t, --template <name>', i18n.__('template'))
     .action(createRive);
 
   program.helpOption('-h, --help', i18n.__('help_option_desc'));
@@ -47,7 +47,7 @@ if (process.argv.length > 3) {
       initialValue: process.cwd(),
       validate: (value) => {
         if (!value || value.length === 0) {
-          return '根目录路径必填！';
+          return i18n.__('project_required');
         } else {
           return undefined;
         }
@@ -61,13 +61,15 @@ if (process.argv.length > 3) {
 
     const projectPath = resolve(project || '.');
 
-    const template = await select<any, InitOptions['template']>({
-      message: '🧰 ' + i18n.__('template_option_desc'),
+    const template = await select<InitOptions['template']>({
+      message: '🧰 ' + i18n.__('template'),
       options: [
-        { value: 'react', label: 'React' },
-        { value: 'cli', label: 'CLI' },
-        { value: 'node', label: 'Node.js' },
         { value: 'base', label: 'Base' },
+        { value: 'web', label: 'Web' },
+        { value: 'react', label: 'React' },
+        { value: 'react-icons', label: 'React icons' },
+        { value: 'node', label: 'Node.js' },
+        { value: 'cli', label: 'CLI' },
       ],
     });
 

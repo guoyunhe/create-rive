@@ -1,8 +1,9 @@
 {
   "help_option_desc": "Show help",
   "version_option_desc": "Show version",
-  "template_option_desc": "Project template",
+  "template": "Project template",
   "project_argument_desc": "Project location",
+  "project_required": "Project location must NOT be empty!",
   "canceled": "Canceled",
   "initializing": "Initializing...",
   "initialization_succeeded": "Initialization succeeded",

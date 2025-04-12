@@ -1,8 +1,9 @@
 import { camelCase, pascalCase } from 'change-case';
+import { f2elint } from 'f2elint';
 import fs from 'fs-extra';
 import { init } from 'init-roll';
 import { basename, dirname, join, resolve } from 'path';
-import prettier from 'prettier-config-rive';
+import prettierConfig from 'prettier-config-ali';
 import { fileURLToPath } from 'url';
 
 export interface InitOptions {
@@ -11,7 +12,7 @@ export interface InitOptions {
    *
    * @default "react"
    */
-  template?: 'react' | 'react-icons' | 'node' | 'cli';
+  template?: 'react' | 'react-icons' | 'node' | 'cli' | 'web' | 'base';
 }
 
 export async function createRive(project: string | null, { template }: InitOptions) {
@@ -30,6 +31,16 @@ export async function createRive(project: string | null, { template }: InitOptio
 
   const name = packageJson?.name || basename(root);
   const _template = template || packageJson?.rive?.template || 'base';
+
+  await f2elint(root, {
+    template: ['react', 'react-icons'].includes(_template) ? 'react' : 'base',
+    stylelint: ['web', 'react', 'react-icons'].includes(_template),
+    prettier: true,
+    lintStaged: true,
+    commitlint: true,
+    disableLog: true,
+  });
+
   const params = {
     name,
     basename: basename(name),
@@ -42,7 +53,7 @@ export async function createRive(project: string | null, { template }: InitOptio
   await init(join(__dirname, '../templates/base'), root, params, {
     bumpDependencies: true,
     disableLog: true,
-    prettier,
+    prettier: prettierConfig,
   });
 
   switch (_template) {
@@ -50,38 +61,38 @@ export async function createRive(project: string | null, { template }: InitOptio
       await init(join(__dirname, '../templates/node'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       break;
     case 'cli':
       await init(join(__dirname, '../templates/node'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       await init(join(__dirname, '../templates/cli'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       break;
     case 'react':
       await init(join(__dirname, '../templates/react'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       break;
     case 'react-icons':
       await init(join(__dirname, '../templates/react'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       await init(join(__dirname, '../templates/react-icons'), root, params, {
         bumpDependencies: true,
         disableLog: true,
-        prettier,
+        prettier: prettierConfig,
       });
       break;
     default:

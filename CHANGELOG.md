@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.0 - 2025-04-12
+
+- Use f2elint templates
+
 ## 3.5.0 - 2024-12-29
 
 - Removed cjs support

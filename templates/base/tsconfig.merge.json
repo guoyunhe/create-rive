@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["esnext"],
     "allowJs": true,
     "checkJs": false,
-    "skipLibCheck": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
+    "lib": ["esnext"],
     "module": "esnext",
     "moduleResolution": "node",
+    "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "skipLibCheck": true,
+    "target": "es2020",
     "types": ["node", "rive/globals"]
   },
   "exclude": [".rive", "build", "coverage", "dist", "node_modules"]
