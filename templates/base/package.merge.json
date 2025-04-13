@@ -7,20 +7,22 @@
     "start": "rive start",
     "build": "rive build",
     "build:watch": "rive build --watch",
-    "test": "rive test",
-    "test:watch": "rive test --watch",
-    "test:ui": "rive test --ui"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
     "@mdx-js/react": "^3.0.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@vitest/ui": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-doc-ui": "^2.0.0",
     "rive": "^3.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^3.0.0"
   },
   "rive": {
     "template": "<%= template %>",

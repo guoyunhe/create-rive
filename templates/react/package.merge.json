@@ -8,8 +8,5 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-rive"
   }
 }
