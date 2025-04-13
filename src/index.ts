@@ -76,7 +76,19 @@ export async function createRive(project: string | null, { template }: InitOptio
         prettier: prettierConfig,
       });
       break;
+    case 'web':
+      await init(join(__dirname, '../templates/web'), root, params, {
+        bumpDependencies: true,
+        disableLog: true,
+        prettier: prettierConfig,
+      });
+      break;
     case 'react':
+      await init(join(__dirname, '../templates/web'), root, params, {
+        bumpDependencies: true,
+        disableLog: true,
+        prettier: prettierConfig,
+      });
       await init(join(__dirname, '../templates/react'), root, params, {
         bumpDependencies: true,
         disableLog: true,
@@ -84,6 +96,11 @@ export async function createRive(project: string | null, { template }: InitOptio
       });
       break;
     case 'react-icons':
+      await init(join(__dirname, '../templates/web'), root, params, {
+        bumpDependencies: true,
+        disableLog: true,
+        prettier: prettierConfig,
+      });
       await init(join(__dirname, '../templates/react'), root, params, {
         bumpDependencies: true,
         disableLog: true,

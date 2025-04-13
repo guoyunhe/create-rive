@@ -17,7 +17,7 @@ i18n.configure({
   directory: join(__dirname, '../locales'),
 });
 
-i18n.setLocale(process.env['LANG']?.substring(0, 2) || 'en');
+i18n.setLocale(process.env.LANG?.substring(0, 2) || 'en');
 
 if (process.argv.length > 3) {
   // Non-interactive
@@ -43,7 +43,7 @@ if (process.argv.length > 3) {
     intro(`🚀 ${chalk.bold(chalk.cyan(packageJson.name))} ${chalk.dim(packageJson.version)}`);
 
     const project = await text({
-      message: '📁 ' + i18n.__('project_argument_desc'),
+      message: `📁 ${i18n.__('project_argument_desc')}`,
       initialValue: process.cwd(),
       validate: (value) => {
         if (!value || value.length === 0) {
@@ -55,14 +55,14 @@ if (process.argv.length > 3) {
     });
 
     if (isCancel(project)) {
-      cancel('👋 ' + i18n.__('canceled'));
+      cancel(`👋 ${i18n.__('canceled')}`);
       process.exit(0);
     }
 
     const projectPath = resolve(project || '.');
 
     const template = await select<InitOptions['template']>({
-      message: '🧰 ' + i18n.__('template'),
+      message: `🧰 ${i18n.__('template')}`,
       options: [
         { value: 'base', label: 'Base' },
         { value: 'web', label: 'Web' },
@@ -74,7 +74,7 @@ if (process.argv.length > 3) {
     });
 
     if (isCancel(template)) {
-      cancel('👋 ' + i18n.__('canceled'));
+      cancel(`👋 ${i18n.__('canceled')}`);
       process.exit(0);
     }
 
@@ -82,9 +82,9 @@ if (process.argv.length > 3) {
       await createRive(projectPath, {
         template,
       });
-      outro('✅ ' + i18n.__('initialization_succeeded'));
+      outro(`✅ ${i18n.__('initialization_succeeded')}`);
     } catch (error) {
-      outro('❌ ' + i18n.__('initialization_failed'));
+      outro(`❌ ${i18n.__('initialization_failed')}`);
       console.error(error);
       process.exit(1);
     }
