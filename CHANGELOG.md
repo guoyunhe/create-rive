@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.0 - 2025-04-19
+
+- Added Preact template
+
 ## 3.6.0 - 2025-04-12
 
 - Use f2elint templates
