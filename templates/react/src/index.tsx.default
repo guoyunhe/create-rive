@@ -9,5 +9,5 @@ export interface <%= componentName %>Props {
 }
 
 export function <%= componentName %>({ children, className, style }: <%= componentName %>Props) {
-  return <<%= componentName %> className={cn('<%= basename %>', className)} style={style}>{children}</<%= componentName %>>;
+  return <div className={cn('<%= basename %>', className)} style={style}>{children}</div>;
 }
