@@ -1,13 +1,13 @@
 import cn from 'classnames';
-import { CSSProperties, ComponentChildren } from 'preact';
+import { ComponentChildren, JSX } from 'preact';
 import './index.css';
 
 export interface <%= componentName %>Props {
   children?: ComponentChildren;
   className?: string;
-  style?: CSSProperties;
+  style?: JSX.CSSProperties;
 }
 
 export function <%= componentName %>({ children, className, style }: <%= componentName %>Props) {
-  return <<%= componentName %> className={cn('<%= basename %>', className)} style={style}>{children}</<%= componentName %>>;
+  return <div className={cn('<%= basename %>', className)} style={style}>{children}</div>;
 }
