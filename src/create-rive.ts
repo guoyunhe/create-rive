@@ -67,7 +67,7 @@ if (process.argv.length > 3) {
         { value: 'base', label: 'Base' },
         { value: 'web', label: 'Web' },
         { value: 'react', label: 'React' },
-        { value: 'react-icons', label: 'React icons' },
+        { value: 'preact', label: 'Preact' },
         { value: 'node', label: 'Node.js' },
         { value: 'cli', label: 'CLI' },
       ],

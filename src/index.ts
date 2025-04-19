@@ -12,7 +12,7 @@ export interface InitOptions {
    *
    * @default "react"
    */
-  template?: 'react' | 'react-icons' | 'node' | 'cli' | 'web' | 'base';
+  template?: 'react' | 'preact' | 'node' | 'cli' | 'web' | 'base';
 }
 
 export async function createRive(project: string | null, { template }: InitOptions) {
@@ -33,8 +33,8 @@ export async function createRive(project: string | null, { template }: InitOptio
   const _template = template || packageJson?.rive?.template || 'base';
 
   await f2elint(root, {
-    template: ['react', 'react-icons'].includes(_template) ? 'react' : 'base',
-    stylelint: ['web', 'react', 'react-icons'].includes(_template),
+    template: ['react', 'preact'].includes(_template) ? 'react' : 'base',
+    stylelint: ['web', 'react', 'preact'].includes(_template),
     prettier: true,
     lintStaged: true,
     commitlint: false,
@@ -50,67 +50,34 @@ export async function createRive(project: string | null, { template }: InitOptio
     template: _template,
   };
 
-  await init(join(__dirname, '../templates/base'), root, params, {
-    bumpDependencies: true,
-    disableLog: true,
-    prettier: prettierConfig,
-  });
+  const initTemplate = async (tpl: string) => {
+    await init(join(__dirname, '../templates', tpl), root, params, {
+      bumpDependencies: true,
+      disableLog: true,
+      prettier: prettierConfig,
+    });
+  };
+
+  await initTemplate('base');
 
   switch (_template) {
     case 'node':
-      await init(join(__dirname, '../templates/node'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
+      await initTemplate('node');
       break;
     case 'cli':
-      await init(join(__dirname, '../templates/node'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
-      await init(join(__dirname, '../templates/cli'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
+      await initTemplate('node');
+      await initTemplate('cli');
       break;
     case 'web':
-      await init(join(__dirname, '../templates/web'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
+      await initTemplate('web');
       break;
     case 'react':
-      await init(join(__dirname, '../templates/web'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
-      await init(join(__dirname, '../templates/react'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
+      await initTemplate('web');
+      await initTemplate('react');
       break;
-    case 'react-icons':
-      await init(join(__dirname, '../templates/web'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
-      await init(join(__dirname, '../templates/react'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
-      await init(join(__dirname, '../templates/react-icons'), root, params, {
-        bumpDependencies: true,
-        disableLog: true,
-        prettier: prettierConfig,
-      });
+    case 'preact':
+      await initTemplate('web');
+      await initTemplate('preact');
       break;
     default:
       break;

@@ -1,0 +1,3 @@
+.<%= basename %> {
+  color: #666;
+}
