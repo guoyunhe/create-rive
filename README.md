@@ -2,32 +2,19 @@
 
 Create various npm package projects
 
-## Base
-
 ```bash
-npm create rive my-pkg
-```
-
-## Node.js
-
-```bash
-npm create rive --template=node my-pkg
-```
-
-## CLI
-
-```bash
-npm create rive --template=cli my-pkg
-```
-
-## React
-
-```bash
-npm create rive --template=react my-pkg
-```
-
-## React icons
-
-```bash
-npm create rive --template=react-icons my-pkg
+$ npm create rive@latest
+┌  🚀 create-rive 3.7.1
+│
+◇  📁 Project location
+│  /home/guo/git/create-rive
+│
+◆  🧰 Project template
+│  ● Base
+│  ○ Web
+│  ○ React
+│  ○ Preact
+│  ○ Node.js
+│  ○ CLI
+└
 ```
