@@ -10,6 +10,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "strict": true,
     "target": "es2020",
     "types": ["rive/globals", "vitest/globals"]
   },
