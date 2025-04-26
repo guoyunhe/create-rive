@@ -29,6 +29,8 @@ export async function createRive(project: string | null, { template }: InitOptio
     //
   }
 
+  const isGitRoot = await fs.exists(join(root, '.git'));
+
   const name = packageJson?.name || basename(root);
   const _template = template || packageJson?.rive?.template || 'base';
 
@@ -36,8 +38,8 @@ export async function createRive(project: string | null, { template }: InitOptio
     template: ['react', 'preact'].includes(_template) ? 'react' : 'base',
     stylelint: ['web', 'react', 'preact'].includes(_template),
     prettier: true,
-    lintStaged: true,
-    commitlint: false,
+    lintStaged: isGitRoot,
+    commitlint: isGitRoot,
     disableLog: true,
   });
 
@@ -59,6 +61,10 @@ export async function createRive(project: string | null, { template }: InitOptio
   };
 
   await initTemplate('base');
+
+  if (isGitRoot) {
+    await initTemplate('github');
+  }
 
   switch (_template) {
     case 'node':
