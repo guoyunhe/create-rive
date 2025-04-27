@@ -1,5 +1,5 @@
 import { camelCase, pascalCase } from 'change-case';
-import { f2elint } from 'f2elint';
+import f2elint from 'f2elint';
 import f2etest from 'f2etest';
 import fs from 'fs-extra';
 import { init } from 'init-roll';
