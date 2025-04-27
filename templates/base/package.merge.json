@@ -1,8 +1,12 @@
 {
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": ["dist", "CHANGELOG.md", "LICENSE", "README.md"],
+  "exports": {
+    ".": {
+      "import": "dist/index.js",
+      "types": "dist/index.d.ts"
+    }
+  },
   "scripts": {
     "start": "rive start",
     "build": "rive build",

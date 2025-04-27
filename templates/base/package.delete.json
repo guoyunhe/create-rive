@@ -1,10 +1,4 @@
 {
-  "typings": null,
-  "module": null,
-  "scripts": {
-    "dev": null,
-    "watch": null
-  },
   "devDependencies": {
     "@guoyunhe/react-lib-scripts": null,
     "@guoyunhe/node-scripts": null,
@@ -25,5 +19,13 @@
     "pika-plugin-ts-types": null,
     "vite": null
   },
+  "main": null,
+  "module": null,
+  "scripts": {
+    "dev": null,
+    "watch": null
+  },
+  "types": null,
+  "typings": null,
   "@pika/pack": null
 }
