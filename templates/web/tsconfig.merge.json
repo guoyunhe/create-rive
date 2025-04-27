@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable"],
-    "moduleResolution": "bundler"
+    "lib": ["dom", "dom.iterable"]
   }
 }
