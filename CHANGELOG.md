@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.8.0 - 2025-04-28
+
+- feat: update `@types/node` to `22.x` (current LTS)
+
 ## 3.7.0 - 2025-04-19
 
 - Added Preact template
