@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.1 - 2025-05-16
+
+- fix(github): action names
+
 ## 3.10.0 - 2025-04-28
 
 - feat: update `@types/node` to `22.x` (current LTS)
