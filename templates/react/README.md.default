@@ -1,0 +1,25 @@
+# <%= name %>
+
+![Version](https://img.shields.io/npm/v/<%= name %>)
+![Downloads](https://img.shields.io/npm/dw/<%= name %>)
+![Bundle size](https://img.shields.io/bundlephobia/minzip/<%= name %>)
+
+Preact components for Bootstrap 5
+
+## Install
+
+```bash
+npm i -S bootstrap <%= name %>
+```
+
+## Example
+
+```js
+import { <%= componentName %> } from '<%= name %>';
+
+function App() {
+  return <<%= componentName %> />;
+}
+
+render(<App />);
+```
