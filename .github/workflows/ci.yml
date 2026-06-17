@@ -4,8 +4,8 @@ permissions:
   contents: read
 
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
 
 jobs:
   lint:
@@ -13,10 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
           version: latest
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
       - run: pnpm install
       - run: pnpm run lint
   test:
@@ -24,10 +26,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
           version: latest
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
       - run: pnpm install
       - run: pnpm run test
   build:
@@ -35,9 +39,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
         with:
           version: latest
+      - uses: actions/setup-node@v4
+        with:
+          cache: pnpm
       - run: pnpm install
       - run: pnpm run build
